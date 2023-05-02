@@ -23,20 +23,42 @@ func randomSign () -> Sign {
 enum Sign {
     
     case rock, paper, scissors
-
+    
     var emoji: String {
         switch self {
         case .rock:
             return "🪨"
-
+            
         case .paper:
             return "🗞️"
             
         case .scissors:
-                return "✂️"
+            return "✂️"
         }
     }
     
+    func gameState(against computerSign: Sign) -> GameState {
+        if self == computerSign {
+            return .draw
+        }
+        
+        switch self {
+        case .rock:
+            if computerSign == .scissors {
+                return .win
+            }
+            
+        case .paper:
+            if computerSign == .rock {
+                return .win
+            }
+            
+        case .scissors:
+            if computerSign == .paper {
+                return .win
+            }
+        }
+        return .lose
+    }
+
 }
-
-

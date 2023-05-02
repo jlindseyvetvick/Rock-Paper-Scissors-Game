@@ -13,7 +13,7 @@ enum GameState {
     var status: String{
         switch self {
         case .start:
-            return "Let's Play Rock, Paper, Scissors!"
+            return "Let's Play!"
             
         case .win:
             return "You got the W!🏆"
@@ -21,7 +21,7 @@ enum GameState {
         case .lose:
             return "Big L, my friend. ❌"
             
-        case . draw:
+        case .draw:
             return "It's a draw."
             
         }
